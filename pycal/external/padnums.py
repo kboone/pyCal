@@ -6,6 +6,11 @@ call pprint_table with an output (e.g. sys.stdout, cStringIO, file)
 and table as a list of lists. Make sure table is "rectangular" -- each
 row has the same number of columns.
 
+2013/10/08, Kyle Boone:
+Update to work with python3
+Added pprint_list as an easy way to print lists since it seems like I use this
+module for that a lot.
+
 2010/12/16, Kyle Boone:
 Found this at: http://ginstrom.com/scribbles/2007/09/04/pretty-printing-a-table-in-python/
 Modified the file to add borders for SQL style prettiness
@@ -17,6 +22,7 @@ __version__ = "0.1"
 __author__ = "Ryan Ginstrom"
 
 import locale
+import sys
 locale.setlocale(locale.LC_NUMERIC, "")
 
 def format_num(num):
@@ -82,3 +88,9 @@ if __name__ == "__main__":
 	import sys
 	out = sys.stdout
 	pprint_table(out, table)
+
+def pprint_list(items, title):
+    """Print a table of items. An index will be printed in one column and the
+    items' __str__ representations in the other."""
+    pprint_table(sys.stdout, [('Id', title)] + [(i, items[i]) for i in
+        range(len(items))])

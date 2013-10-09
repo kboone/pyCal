@@ -9,7 +9,7 @@ class urls:
     # bSpace
     bSpaceBase = "https://bspace.berkeley.edu"
     bSpaceService = bSpaceBase + "/sakai-login-tool/container"
-    bSpaceUserInfo = bSpaceBase + "/direct/user/current.xml"
-    bSpaceMembership = bSpaceBase + "/direct/membership.xml"
     bSpaceSiteList = bSpaceBase + "/direct/site.json"
+    bSpaceSitePages = bSpaceBase + "/direct/site/%s/pages.json"
+    bSpaceSiteAssignments = bSpaceBase + "/direct/assignment/site/%s.json"
 

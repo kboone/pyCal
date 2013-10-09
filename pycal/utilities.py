@@ -3,7 +3,7 @@ Utility file with random fun stuff
 """
 
 import functools
-
+import os
 
 
 class cached(object):
@@ -47,3 +47,13 @@ class cached(object):
         """Support instance methods."""
         return functools.partial(self.__call__, obj)
 
+def mkdirAndCd(directory):
+    """Create the specified directory and cd into it. If the directory exists
+    then just enter it. Specifying "." or no directory will use the current one
+    without making a new one"""
+    try:
+        os.mkdir(directory)
+    except OSError:
+        pass
+
+    os.chdir(directory)
