@@ -69,8 +69,8 @@ def pprint_table(out, table):
 		# rest of the cols
 		for i in range(1, len(row)):
 			col = format_num(row[i]).ljust(col_paddings[i])
-			print(' ' + col, '|', file=out)
-		print(file=out, end="")
+			print(' ' + col, '|', file=out, end="")
+		print(file=out)
 		
 		# after the first line, print another bar across
 		if row == table[0]:

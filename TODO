@@ -1,1 +1,9 @@
-Fill out the TODO file
+bSpace
+- Sometimes there is a Copyright Restriction Download Warning when you try to
+  download files... figure out what to do with this. eg: the first midterm for
+  PHYS 7A.
+- Figure out how to deal with URLs when files come up
+- Find some way to do an incremental download so that I don't redownload
+  everything every time I do a download() call. I am given update times in
+  Sakai... I can probably write those to the files that are downloaded and check
+  if they have been updated.
